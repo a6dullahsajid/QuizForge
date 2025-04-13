@@ -2,6 +2,7 @@ import QuestionTimer from "./QuestionTimer.jsx";
 import Summary from "./Summary.jsx";
 import { useCallback, useState } from "react";
 export default function Quiz({questions}) {
+  {console.log('Quiz rendered')}
   const [answersArray, setAnswersArray] = useState([]);
   const quizCompleted = answersArray.length === questions.length;
   const activeQuestionIndex = quizCompleted ? answersArray.length - 1 : answersArray.length;

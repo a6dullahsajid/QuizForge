@@ -1,5 +1,6 @@
 import logoImg from "../assets/quiz-logo.png";
 export default function Header() {
+  {console.log('Header rendered')}
   return (
     <header>
       <h1>

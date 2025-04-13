@@ -1,5 +1,9 @@
 import quizCompleteImg from "../assets/quiz-complete.png";
+import { useContext } from "react";
+import { QuizContext } from "./quizContext";
 export default function summary({ allAnswers, questions }) {
+  {console.log('Summary rendered')}
+  const { gotoHomePage } = useContext(QuizContext);
   let noCorrectAns = 0;
   let noSkippedAns = 0;
   let noWrongAns = 0;
@@ -58,6 +62,9 @@ export default function summary({ allAnswers, questions }) {
           );
         })}
       </ol>
+      <div id="takeNewQuiz">
+        <button onClick={gotoHomePage}>Try Again</button>
+      </div>
     </div>
   );
 }

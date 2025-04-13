@@ -10,12 +10,18 @@ export default function QuestionTimer({ timeout, onTimeout }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setRemainingTime((prevRemainingTime) => {
-        return prevRemainingTime - 5;
+        return prevRemainingTime -10;
       });
-    }, 5);
+    }, 10);
     return () => {
       clearInterval(interval);
     };
   }, []);
-  return <progress id="question-time" max={timeout} value={remainingTime} />;
+  const roundedRemainingTime = Math.round(remainingTime/1000);
+  return (
+    <div className="progressContainer">
+      <div id="timer" className={roundedRemainingTime <= 5 ? roundedRemainingTime % 2 != 0 ? "bigTimer redText" : "smallTimer redText": "smallTimer"} >{roundedRemainingTime}</div>
+      <progress id="question-time" max={timeout} value={remainingTime} />
+    </div>
+  );
 }

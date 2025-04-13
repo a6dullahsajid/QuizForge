@@ -373,7 +373,31 @@ header h3 {
   font-size: 1.8rem;
   color: #594276;
 }
-
+.progressContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#timer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  background: #7037c0;
+  border-radius: 50%;
+}
+.redText{
+  color: rgb(244, 40, 40);
+}
+.bigTimer{
+  font-size: 1.2rem;
+}
+.smallTimer{
+  font-size: 1rem;
+}
 #summary-stats .text {
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
@@ -381,6 +405,29 @@ header h3 {
   color: #30273a;
   margin-top: -0.7rem;
   letter-spacing: 0.1rem;
+}
+#takeNewQuiz{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#takeNewQuiz button{
+  font-family: 'Roboto Condensed', sans-serif;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  border: none;
+  background: #7037c0;
+  color: rgb(213, 213, 213);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 1s ease-out;
+}
+
+#takeNewQuiz button:hover{
+  background: #571bab;
 }
 
 @keyframes slide-in-from-bottom {

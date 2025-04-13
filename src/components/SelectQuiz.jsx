@@ -9,10 +9,19 @@ import JAVAQUESTIONS from "./javaQuestions.js";
 import CPPQUESTIONS from "./cppQuestions.js";
 import OOPSQUESTIONS from "./oopsQuestions.js";
 import Quiz from "./Quiz.jsx";
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import { QuizContext } from "./quizContext.jsx";
 
 export default function SelectQuiz() {
+  {console.log('SelectedQuiz rendered')}
   const [selectedQuiz, setselectedQuiz] = useState(null);
+  const { initialCount } = useContext(QuizContext);
+  useEffect(() => {
+    if (initialCount > 0) {
+      setselectedQuiz(null);
+    }
+  }, [initialCount]);
+
   function handleHTMLQuiz() {
     setselectedQuiz(HTMLQUESTIONS);
   }
